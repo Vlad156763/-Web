@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --title_height: 15vh;
+    --indents_for_containers: 1vh;
+}
+
+body {
+    background-color: rgb(30, 30, 30);
+    color: white;
+
+}
+
+.title_containers,
+aside {
+    margin: 1vh;
+    background-color: rgb(50, 50, 50);
+    box-sizing: border-box;
+    border-radius: 5vh;
+    padding: 1vh;
+    display: grid;
+    place-items: center;
+}
+
+
+header {
+    padding: 1vh;
+    font-size: 5vh;
+    font-style: italic;
+    overflow: hidden;
+}
+
+footer {
+    font-size: 5vh;
+    clear: both;    
+}
+
+#My_resume_link {
+    color: #ffffff;
+}
+
+#My_resume_link:hover {
+    color: gray;
+}
+
+aside {
+    width: 30%;
+    min-width: 50px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10vh;
+    float: left;
+}
+#Photo {
+    width: 90%;
+    box-sizing: border-box;
+    grid-row: 1;
+    justify-self: center;
+    margin: 2vh;
+    border-radius: 8vh;
+    border-top: 2vh solid rgba(255, 0, 0, 40%);
+    padding: 5%;
+    border-bottom: 2vh solid rgba(0, 0, 0, 40%);
+}
+
+.Inner_navigation {
+    width: 90%;
+    box-sizing: border-box;
+    display: grid;
+    margin: 1vh;
+    padding: 1vh;
+    font-size: 3vh;
+    background-color: rgb(80,80,80);
+    border: 1vh solid rgba(0, 0, 0, 20%);
+}
+.Inner_navigation:hover {
+    background-color:  rgb(100,100,100);
+}
+.Inner_navigation:active {
+    transform: scale(1.1);
+}
+main {
+    float: left;
+    width: calc(70% - var(--indents_for_containers)*2 - var(--indents_for_containers) * 2);
+    background-color: rgb(50, 50, 50);
+    box-sizing: border-box;
+    border-radius: 5vh;
+    padding: 2vh;
+    display: grid;
+    margin: var(--indents_for_containers);
+    font-size: 3vh;
+}
+#title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.5vh;
+
+}
+.link {
+    text-decoration: none;
+    color: #ffffff;
+}
+#Linux_photo {
+    width: 20%;
+
+}
+#awards_and_titles_list {
+    padding-left: 4vh;
+}
