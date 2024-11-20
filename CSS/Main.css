@@ -114,12 +114,12 @@ main {
         margin-bottom: 1vh;
     }
     #Photo {
-        width: 10vh;
+        width: 10vw;
         grid-row: 1 / 5;
         justify-self: center;
     }
     .Inner_navigation {
-        font-size: 2vh;
+        font-size: 3vw;
     }
     * {
         padding: 0.5vh;
