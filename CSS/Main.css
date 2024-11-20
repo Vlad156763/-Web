@@ -1,6 +1,7 @@
 * {
     margin: 0;
-    padding: 0;
+    /* зовнішні відступи для всіх блоків */
+    padding: 1vh;
 }
 
 :root {
@@ -9,32 +10,35 @@
 }
 
 body {
-    background-color: rgb(30, 30, 30);
-    color: white;
-
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
-
-.title_containers,
-aside {
-    margin: 1vh;
-    background-color: rgb(50, 50, 50);
-    box-sizing: border-box;
-    border-radius: 5vh;
-    padding: 1vh;
+.mainSide {
+    display: grid;
+    padding: 0;
+    align-items: start;
+    grid-template-columns: 20% 1fr;
+}
+.title_containers, aside {
+    background-color: #404040;
+    border-radius: 10px;
     display: grid;
     place-items: center;
 }
-
-
-header {
-    padding: 1vh;
-    font-size: 5vh;
+.title_containers {
+    font-size: 2em;
     font-style: italic;
     overflow: hidden;
 }
+aside {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+}
 
 footer {
-    font-size: 5vh;
     clear: both;    
 }
 
@@ -42,60 +46,45 @@ footer {
     color: #ffffff;
 }
 
-#My_resume_link:hover {
-    color: gray;
-}
 
-aside {
-    width: 30%;
-    min-width: 50px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 10vh;
-    float: left;
-}
 #Photo {
-    width: 90%;
+    width: 100%;
     box-sizing: border-box;
-    grid-row: 1;
     justify-self: center;
-    margin: 2vh;
-    border-radius: 8vh;
-    border-top: 2vh solid rgba(255, 0, 0, 40%);
-    padding: 5%;
-    border-bottom: 2vh solid rgba(0, 0, 0, 40%);
+    border-radius: 10%;
+    margin-bottom: 1vh;
+    border-top: 1em solid rgba(255, 0, 0, 40%);
+    border-bottom: 1em solid rgba(0, 0, 0, 40%);
 }
-
+/* кнопки */
 .Inner_navigation {
-    width: 90%;
+    width: 100%;
     box-sizing: border-box;
-    display: grid;
-    margin: 1vh;
-    padding: 1vh;
-    font-size: 3vh;
-    background-color: rgb(80,80,80);
-    border: 1vh solid rgba(0, 0, 0, 20%);
+    background-color: #5a5a5a;
+    border-bottom: 0.5vh solid #404040;
+
 }
-.Inner_navigation:hover {
-    background-color:  rgb(100,100,100);
+#roundingTop {
+    border-radius: 10px 10px 0 0;
 }
-.Inner_navigation:active {
-    transform: scale(1.1);
+#roundingBottom {
+    border-radius: 0 0 10px 10px;
+    border-bottom: 0;
 }
 main {
-    float: left;
-    width: calc(70% - var(--indents_for_containers)*2 - var(--indents_for_containers) * 2);
-    background-color: rgb(50, 50, 50);
+    background-color: #404040;
     box-sizing: border-box;
-    border-radius: 5vh;
-    padding: 2vh;
+    border-radius: 10px;
     display: grid;
-    margin: var(--indents_for_containers);
-    font-size: 3vh;
+    margin-left: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 2em;
 }
 #title {
     text-align: center;
     font-weight: bold;
-    font-size: 3.5vh;
+    font-size: 1.4em;
 
 }
 .link {
@@ -108,4 +97,31 @@ main {
 }
 #awards_and_titles_list {
     padding-left: 4vh;
+}
+@media (max-device-width: 800px) {
+    .mainSide {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    main {
+        margin: 0;
+        margin-bottom: 1vh;
+    }
+    #Photo {
+        width: 50%;
+    }
+    * {
+        padding: 0.5vh;
+    }
+}
+/* для меню навігації, щоб кнопки не виділялись на сенсорних екранах */
+@media (pointer: fine) {
+    .Inner_navigation:hover {
+        background-color: #6a6a6a;
+    }
+}
+@media (pointer: coarse) {
+    .Inner_navigation:hover {
+        background-color: #5a5a5a; 
+    }
 }
