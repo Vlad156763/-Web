@@ -62,7 +62,7 @@ footer {
     border-bottom: 0.5vh solid #404040;
 }
 .Inner_navigation {
-    font-size: 2vw; /* Використовуємо vw для звичайних пристроїв */
+    font-size: 2vw; 
 }
 
 #roundingTop {
