@@ -35,7 +35,6 @@ aside {
     width: 100%;
     margin-top: 1vh;
     margin-bottom: 1vh;
-
 }
 
 footer {
@@ -50,7 +49,6 @@ footer {
 #Photo {
     width: 100%;
     box-sizing: border-box;
-    justify-self: center;
     border-radius: 10%;
     margin-bottom: 1vh;
     border-top: 1em solid rgba(255, 0, 0, 40%);
@@ -62,8 +60,11 @@ footer {
     box-sizing: border-box;
     background-color: #5a5a5a;
     border-bottom: 0.5vh solid #404040;
-
 }
+.Inner_navigation {
+    font-size: 2vw; /* Використовуємо vw для звичайних пристроїв */
+}
+
 #roundingTop {
     border-radius: 10px 10px 0 0;
 }
@@ -98,7 +99,12 @@ main {
 #awards_and_titles_list {
     padding-left: 4vh;
 }
-@media (max-device-width: 800px) {
+@media (max-device-width: 1500px){
+    .mainSide{
+        grid-template-columns: 30% 1fr;
+    }
+}
+@media (max-device-width: 1024px) {
     .mainSide {
         grid-template-columns: 1fr;
         gap: 0;
@@ -108,12 +114,27 @@ main {
         margin-bottom: 1vh;
     }
     #Photo {
-        width: 50%;
+        width: 10vh;
+        grid-row: 1 / 5;
+        justify-self: center;
+    }
+    .Inner_navigation {
+        font-size: 2vh;
     }
     * {
         padding: 0.5vh;
     }
+    aside {
+        grid-template-columns: 1fr 1fr; 
+    }
 }
+@media (max-device-width: 425px){
+    aside {
+        grid-template-columns: 1fr; 
+    }
+}
+
+
 /* для меню навігації, щоб кнопки не виділялись на сенсорних екранах */
 @media (pointer: fine) {
     .Inner_navigation:hover {
