@@ -6,6 +6,8 @@
     <title>Resume</title>
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="Images/catTitleIcon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -98,25 +100,33 @@
             </div>
         </div>
         <div class="containers Left_side" id="Comments">
+            <!-- вікно з повідомленням про помилку -->
+            <div id="widgetError">
+                <p id="textWidgetError">Заповніть вірно поля!</p>
+                <button id="buttonWidgetError">Закрити</button>
+            </div>
+            <!-- вікно з повідомленням про успіх -->
+            <div id="widgetSuccess">
+                <p id="textWidgetSuccess">Дякую за відгук!</p>
+            </div>
             <span class="title">Коментар</span>
             <div id="Comments_capasity">
-                <form>
+                <form id="CommentsForm" method="dialog" novalidate>
                     <label for="Name"></label>
-                    <span class="form_text">Напишіть ваше ім'я</span>
-                    <input class="button" id="Name" type="text" required>
+                    <div class="form_text">Напишіть ваше ім'я<span id="correctOrNot_Name"></span></div> 
+                    <input class="button" id="Name" type="text">
                     <br>
                     <label for="Email"></label>
-                    <span class="form_text">Електронна пошта</span>
-                    <input class="button" id="Email" type="email" required>
+                    <div class="form_text">Електронна пошта <span id="correctOrot_Email"></span></div>
+                    <input class="button" id="Email" type="email">
                     <br>
                     <label for="Number"></label>
-                    <span class="form_text">Ваш номер</span>
-                    <input class="button" id="Number" type="text" required>
+                    <div class="form_text">Ваш номер <span id="correctOrNot_Number"></span></div>
+                    <input class="button" id="Number" type="text">
                     <br>
-                    <span class="form_text">Коментар</span>
-                    <textarea class="button" id="comment" required></textarea>
+                    <div class="form_text">Коментар <span id="correctOrNot_comment"></span></div>
+                    <textarea class="button" id="comment"></textarea>
                     <input id="Submit" type="submit">
-
                 </form>
             </div>
         </div>
@@ -207,6 +217,12 @@
             </div>
         </div>
     </div>
+    <!-- якщо js не підключений на стороні клієтна, буде виконано noscript -->
+    <noscript id="noscript" title="Без нього наш сайт не працюватиме!">
+        <a id="noscriptText" href="https://support.google.com/adsense/answer/12654?hl=uk" target="_blank">Як увімкнути JavaScript <br></a>
+        (він потрібен для роботи сайту!)
+    </noscript> 
+    <script src="JS/main.js"></script>
 </body>
 
 </html>
