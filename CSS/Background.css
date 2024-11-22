@@ -1,7 +1,7 @@
 body {
     background: rgb(30,30,30);
     color: white;
-    background-image: url(../Images/Повторюване\ зображення.jpg);
+    background-image: url(/Images/image.jpg);
     background-repeat: repeat-y;
     background-position: right;
 }

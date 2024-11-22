@@ -30,21 +30,21 @@ for (let i = 0; i < buttons.length; i++) {
 
         //перевіряю коментар і якщо він правильний, інформую користувача
         if(NameTest.test(Name.value)) {
-            correctOrNot_Name.innerHTML = '<img class="iconSorNot" src="../Images/v.png" alt="icon">'; NameCorrect = true;
+            correctOrNot_Name.innerHTML = '<img class="iconSorNot" src="/Images/greenIcon.png" alt="icon">'; NameCorrect = true;
         } else {
-            correctOrNot_Name.innerHTML = '<img class="iconSorNot" src="../Images/x.png" alt="icon">'; NameCorrect = false;
+            correctOrNot_Name.innerHTML = '<img class="iconSorNot" src="/Images/redIcon.png" alt="icon">'; NameCorrect = false;
         }
         //перевірка пошти
         if(EmailTest.test(Email.value))    {         
-            correctOrot_Email.innerHTML = '<img class="iconSorNot" src="../Images/v.png" alt="icon">'; EmailCorrect = true;
+            correctOrot_Email.innerHTML = '<img class="iconSorNot" src="/Images/greenIcon.png" alt="icon">'; EmailCorrect = true;
         } else {
-            correctOrot_Email.innerHTML = '<img class="iconSorNot" src="../Images/x.png" alt="icon">'; EmailCorrect = false;
+            correctOrot_Email.innerHTML = '<img class="iconSorNot" src="/Images/redIcon.png" alt="icon">'; EmailCorrect = false;
         }
         //перевірка номеру 
         if(NumberTest.test(Number.value))  {
-            correctOrNot_Number.innerHTML = '<img class="iconSorNot" src="../Images/v.png" alt="icon">'; NumCorrect = true;
+            correctOrNot_Number.innerHTML = '<img class="iconSorNot" src="/Images/greenIcon.png" alt="icon">'; NumCorrect = true;
         }
-        else { correctOrNot_Number.innerHTML = '<img class="iconSorNot" src="../Images/x.png" alt="icon">'; NumCorrect = false;
+        else { correctOrNot_Number.innerHTML = '<img class="iconSorNot" src="/Images/redIcon.png" alt="icon">'; NumCorrect = false;
         }
     });
 }
