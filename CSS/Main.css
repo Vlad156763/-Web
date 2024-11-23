@@ -24,7 +24,7 @@ aside {
     place-items: center;
 }
 footer {
-    height: 15vh;
+    height: min(5vh, 5vw);
 }
 .title_containers {
     font-size: min(2em, 3vh);
@@ -135,8 +135,7 @@ main {
 
 #MenuWidget, #MenuWidgetallInfoButton, #MenuWidgetBiographyButton {
     position: fixed;
-    width: 15vw;
-    height: 15vw;
+    width: min(12vw, 12vh);
     border-radius: 50%;
     padding: 0;
     left: 3vw;
@@ -145,7 +144,7 @@ main {
 #MenuWidget {
     display: none;
     background-color: rgb(32, 104, 69);
-    top: calc(100% - 15vw - 1vh - 2vw);
+    top: calc(100% - 15vw);
 }
 
 .MenuIcons {
@@ -195,9 +194,6 @@ main {
     border: none;
     background-color: #212436;
 }
-footer {
-    height: auto;
-}
 @media (max-device-width: 1500px) {
     .mainSide {
         grid-template-columns: 30% 1fr;
@@ -225,7 +221,7 @@ footer {
         margin: 0;
         margin-bottom: 1vh;
         margin-top: 1vh;
-        font-size: 2em;
+        font-size: 1em;
     }
     * {
         padding: 0.5vh;
@@ -235,7 +231,7 @@ footer {
         display: none;
     }
     footer {
-        height: 15vw;
+        height: min(10vh, 10vw);
     }
 
     #quoteDay {
@@ -252,8 +248,6 @@ footer {
         grid-template-columns: 1fr;
     }
 }
-
-
 /* для меню навігації, щоб кнопки не виділялись на сенсорних екранах */
 @media (pointer: fine) {
     .Inner_navigation:hover {
@@ -291,15 +285,12 @@ footer {
     font-size: min(2.5vh, 2.5vw);
     background-color: rgb(5, 136, 68);
     border-radius: min(1vh, 1vw);
-
     display: grid;
     justify-self: center;
 }
 #quoteDayMobile {
     box-sizing: border-box;
-    
     width: 100%;
-
     margin: 1vh;
     margin-top: 0; 
     justify-self: center;
@@ -310,7 +301,7 @@ footer {
 #TextQuoteDayMobile {
     background-color: rgb(5, 136, 68);
     border-radius: min(1vh, 1vw);
-    font-size: min(2.5vh, 2.5vw);
+    font-size: min(2em, 3vh);
     display: grid;
     justify-content: center;
 }
@@ -320,6 +311,6 @@ footer {
     color: #ffffff;
     background: linear-gradient(to bottom, rgb(5, 136, 68), #5a5a5a);
     border: none;
-    font-size: min(2.5vh, 2.5vw);
+    font-size: min(2em, 3vh);
 
 }
