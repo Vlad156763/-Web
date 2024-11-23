@@ -1,120 +1,386 @@
+/* general */
 * {
     margin: 0;
-    /* зовнішні відступи для всіх блоків */
-    padding: 1vh;
+    padding: 0;
 }
 
 body {
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background: rgb(30, 30, 30);
+    color: white;
 }
 
-.mainSide {
+.containers {
     display: grid;
-    padding: 0;
-    align-items: start;
-    grid-template-columns: 20% 1fr;
+    background: rgb(43, 42, 42);
+    border: 5px solid rgba(0, 0, 0, 20%);
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px;
 }
 
-.title_containers,
-aside {
-    background-color: #404040;
-    border-radius: min(1vh, 1vw);
+:root {
+    --Width_personal_data_container: 750px;
+    --size-My_photo: 178px;
+    --width_side_windows: 450px;
+}
+
+#edu,
+#proff_skill {
     display: grid;
+    grid-row: 1/3;
+    margin-top: 30px;
+    width: var(--width_side_windows);
+    grid-template-rows: 80px;
+    height: 570px;
+}
+
+#edu_capasity,
+#proff_skill_capasity {
+    margin: 10px;
+    padding: 10px;
+}
+
+.bold_text {
+    display: grid;
+    font-weight: bold;
     place-items: center;
 }
-footer {
-    height: min(5vh, 5vw);
-}
-.title_containers {
-    font-size: min(2em, 3vh);
-    font-style: italic;
-    overflow: hidden;
+
+.bold_text:before {
+    content: "\A";
+    white-space: pre;
 }
 
-aside {
-    box-sizing: border-box;
-    width: 100%;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-
+.highlighted_text {
+    font-family: 'Arial Narrow Bold', sans-serif;
 }
 
-#My_resume_link {
-    color: #ffffff;
-
+#Comments,
+#My_works {
+    width: var(--width_side_windows);
+    grid-row: 4;
+    grid-template-rows: 80px auto;
 }
 
-/* кнопки */
-.Inner_navigation {
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #5a5a5a;
-    border: 0;
-    border-bottom: 0.5vh solid #404040;
-}
+/* general */
 
-.Inner_navigation {
-    font-size: 2vw;
-}
-
-main {
-    background-color: #404040;
-    box-sizing: border-box;
-    border-radius: min(1vh, 1vw);
+/* windows */
+#windows {
+    width: calc(var(--Width_personal_data_container) + 500px + 40px + 20px + 500px);
     display: grid;
-    margin-left: 1vh;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    font-size: min(2em, 3vh);
+    margin: 0 auto;
+    grid-template-columns: 500px calc(var(--Width_personal_data_container) + 50px) 500px;
+    grid-gap: 10px;
 }
 
-#PhotoInMenu, #PhotoInMainSide {
-    display: none;
-    width: 60%;
-    box-sizing: border-box;
-    border-radius: min(1vh, 1vw);
-    margin-bottom: max(1vh, 1vw);
-    justify-self: center;
-    border-radius: max(2vw, 2vh);
-}
-@media (max-device-width: 1024px) {
-    #PhotoInMainSide {
-        display: block;
-        width: 30%;
-    }
-    #PhotoInMenu {
-        display: none;
-    }
-}
-/* на 1 більше за мінімальну ширину*/
-@media (min-device-width: 1025px) {
-    #PhotoInMainSide {
-        display: none;
-    }
-    #PhotoInMenu {
-        display: block;
-    }
+.Left_side {
+    display: grid;
+    justify-self: right;
 }
 
-#title {
-    text-align: center;
+.right_side {
+    display: grid;
+    justify-self: left;
+}
+
+/* windows */
+
+/* Personal_data_container */
+#Personal_data_container {
+    width: var(--Width_personal_data_container);
+    grid-column: 2;
+    height: 400px;
+}
+
+/* title */
+.title {
+    display: grid;
+    width: auto;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
     font-weight: bold;
-    font-size: 1.4em;
+    place-items: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background: rgb(75, 71, 71);
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+.title:not(#social_media) {
+    text-align: center;
+}
+
+/* title */
+/* Personal_data_capasity */
+#Personal_data_capasity {
+    display: grid;
+    grid-template-columns: calc(var(--size-My_photo) + 40px) auto;
+}
+
+#my_photo {
+    width: var(--size-My_photo);
+    height: var(--size-My_photo);
+    padding: 10px;
+    border-radius: 20px 80px;
+    border-top: 5px solid #156763;
+    border-bottom: 5px solid #763315;
+    margin: 10px;
+    margin-left: 15px;
+}
+
+/* Personal_data */
+#Personal_data {
+    display: grid;
+    padding: 10px;
+    width: 450px;
+    padding-top: 20px;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(9, 22px);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-right: 15px;
+}
+
+.Persnal_data_FT {
+    font-weight: bold;
+}
+
+.Persnal_data_LT::after {
+    content: "\A";
+    white-space: pre;
+}
+
+/* Personal_data */
+/* social_media */
+#social_media {
+    width: calc(var(--Width_personal_data_container) - 80px);
+    /*80px це висота заголовків*/
+    height: 50px;
+    background: rgb(75, 71, 71);
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-telegram {
+    color: #0088cc;
+}
+
+.fa-instagram {
+    color: #E1306C;
+}
+
+.fa-facebook {
+    color: #148CEF;
+}
+
+.fa-github {
+    color: #e6dfdf;
+}
+
+.fa-viber {
+    color: #7360F2;
+}
+
+.social_media_icons {
+    font-size: 50px;
 
 }
 
-.link {
+.social_media_icons:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.social_media_link {
     text-decoration: none;
-    color: #ffffff;
 }
 
-#Linux_photo {
-    width: 20%;
+/* social_media */
+/* Personal_data_capasity */
+/* Personal_data_container */
+
+/* Comments */
+#Submit {
+    width: 100px;
+    padding: 10px;
 }
 
-#awards_and_titles_list {
-    padding-left: 4vh;
+.button,
+#Submit {
+    background: rgb(94, 89, 89);
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 0;
+}
+
+.button {
+    width: 90%;
+    outline: none;
+}
+
+.button:not(#Submit) {
+    width: calc(90% - 10px);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.button:not(#Submit):not(#comment) {
+    height: 30px;
+}
+
+#comment {
+    height: 150px;
+    resize: none;
+}
+
+.form_text {
+    margin-left: 20px;
+    margin-top: 10px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+#Comments {
+    grid-row: 3;
+    grid-template-columns: 1fr;
+    position: relative;
+}
+
+#Submit:hover {
+    background: rgb(120, 120, 120);
+}
+
+/* Comments */
+
+/* From_me */
+#From_me {
+    width: var(--Width_personal_data_container);
+    grid-column: 2;
+    grid-row: 2/4;
+    grid-template-rows: 80px;
+}
+
+#From_me_capasity {
+    background: rgb(56, 54, 54);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.inner_content {
+    height: 570px;
+    overflow-y: scroll;
+
+}
+
+#From_me_text {
+    font-size: 20px;
+}
+
+.inner_content::-webkit-scrollbar {
+    width: 15px;
+    background: #5c6161;
+    border-radius: 10px;
+}
+
+.inner_content::-webkit-scrollbar-thumb {
+    background: #938e8bcc;
+    border-radius: 10px;
+    border: 2px solid #5c6161;
+}
+
+/* From_me */
+
+/* My_works */
+#My_works_capasity {
+    padding: 10px;
+    margin: 10px;
+}
+
+.My_works_link {
+    color: white;
+}
+
+.My_works_link:hover {
+    color: rgb(137, 136, 143);
+}
+
+#My_works {
+    grid-row: 3;
+}
+
+/* My_works */
+
+
+
+.iconSorNot {
+    height: 20px;
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+#widgetError {
+    display: none;
+    position: absolute;
+    width: 60%;
+    margin-left: calc(40% / 2 - 20px);
+    margin-top: calc(50% - 80px /2);
+    font-size: 20px;
+    font-weight: bold;
+    height: auto;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+
+}
+
+#textWidgetError {
+    background-color: #555050;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#buttonWidgetError {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#buttonWidgetError:hover {
+    background-color: #f4736a;
+}
+#widgetSuccess {
+    display: none;
+    position: absolute;
+    background-color: rgb(10, 119, 76);
+    width: 50%;
+    margin-left: calc(50% / 2);
+    margin-top: calc(10px + 60px + 10px);
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    border-radius: 0 0 20px 20px;
+    opacity: 0; 
+    transition: opacity 0.2s;
+
+}
+
+#textWidgetSuccess {
+    text-align: center;
+    margin-top: 8px;
 }
 
 #noscript {
@@ -123,203 +389,14 @@ main {
     position: fixed;
     border-radius: 0 0 20px 20px;
     top: 0;
-    width: 30%;
-    font-size: 2em;
+    width: 450px;
+    font-size: 24px;
     font-weight: bold;
-    margin-left: calc(50% - 30% /2);
+    margin-left: calc(50% - 450px / 2);
     padding: 10px;
     text-align: center;
 }
 
 #noscriptText {
     color: #000000;
-}
-:root {
-    --sizeMenu: 10vw; /*розмір меню*/
-    --margin: 1vw; /*відступи від блоків*/
-}
-#MenuWidget, #MenuWidgetallInfoButton, #MenuWidgetBiographyButton {
-    position: fixed;
-    width: var(--sizeMenu);
-    height: var(--sizeMenu);
-    border-radius: 50%;
-    padding: 0;
-    left: 2vw;
-    
-}
-#MenuWidget {
-    display: none;
-    background-color: rgb(32, 104, 69);
-    top: calc(100% - var(--sizeMenu) - 2vw);
-}
-
-.MenuIcons {
-    width: 65%;
-    height: 65%;
-    display: flex; 
-    justify-self: center;
-    align-items: center;
-}
-
-#iconMenu {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    place-self: center;
-}
-#MenuWidgetallInfoButton{
-    top: calc(100% - var(--sizeMenu) * 2 - 2vw - var(--margin));
-}
-#MenuWidgetBiographyButton {
-    top: calc(100% - var(--sizeMenu) * 3 - 2vw  - var(--margin) * 2);
-}
-#MenuWidgetdevelop_linuxButton, #MenuWidgetnagorodyButton {
-    position: fixed;
-    width: var(--sizeMenu);
-    height: var(--sizeMenu);
-    border-radius: 50%;
-    padding: 0;
-    top: calc(100% - var(--sizeMenu) - 2vw);
-}
-#MenuWidgetdevelop_linuxButton {
-    left: calc(var(--sizeMenu) + 2vw + var(--margin));
-}
-#MenuWidgetnagorodyButton {
-    left: calc(var(--sizeMenu) * 2 + 2vw + var(--margin) * 2);
-}
-#allInfoButton {
-    border-radius: min(1vh, 1vw) min(1vh, 1vw) 0 0 ;
-}
-#nagorodyButton {
-    border-radius: 0 0 min(1vh, 1vw) min(1vh, 1vw);
-    border: none;
-
-}
-
-.buttonMenu {
-    border: none;
-    background-color: #212436;
-}
-@media (max-device-width: 1500px) {
-    .mainSide {
-        grid-template-columns: 30% 1fr;
-    }
-
-    #noscript {
-        width: 50%;
-        margin-left: calc(50% - 50% /2);
-    }
-}
-
-@media (max-device-width: 1024px) {
-    #MenuWidget {
-        display: block;
-    }
-    .buttonMenu {
-        display: none;
-    }
-    .mainSide {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-    main {
-        margin: 0;
-        margin-bottom: 1vh;
-        margin-top: 1vh;
-        font-size: min(1em, 2vw);
-    }
-    * {
-        padding: 0.5vh;
-    }
-
-    aside {
-        display: none;
-    }
-    footer {
-        height: min(10vh, 10vw);
-    }
-
-    #quoteDay {
-        display: none;
-    }
-    .title_containers {
-        font-size: min(1em, 2vw);
-    }
-}
-@media (min-device-width: 1025px) {
-    #quoteDayMobile {
-        display: none;
-    }
-}
-@media (max-device-width: 425px) {
-    aside {
-        grid-template-columns: 1fr;
-    }
-}
-/* для меню навігації, щоб кнопки не виділялись на сенсорних екранах */
-@media (pointer: fine) {
-    .Inner_navigation:hover {
-        background-color: #6a6a6a;
-    }
-}
-
-@media (pointer: coarse) {
-    .Inner_navigation:hover {
-        background-color: #5a5a5a;
-    }
-}
-#quoteDay {
-    position: fixed;
-    background-color: rgba(25, 63, 44, 0.7);
-    height: 10%;
-    top: 0;
-    border-radius: 0 0 min(1vh, 1vw) min(1vh, 1vw);
-}
-#closeButtonQuoteDay {
-    display: grid;
-    background: linear-gradient(to bottom, rgb(5, 136, 68), #5a5a5a);
-    outline: none;
-    color: #ffffff;
-    font-size: min(2.5vh, 2.5vw);
-    justify-self: center;
-    align-items: center;
-    width: min(10vh, 10vw);
-    height: min(5vh, 5vw);
-    font-size: min(2vh, 2vw);
-    border: none;
-    padding: 0;
-}
-#TextQuoteDay {
-    font-size: min(2.5vh, 2.5vw);
-    background-color: rgb(5, 136, 68);
-    border-radius: min(1vh, 1vw);
-    display: grid;
-    justify-self: center;
-}
-#quoteDayMobile {
-    box-sizing: border-box;
-    width: 100%;
-    margin: 1vh;
-    margin-top: 0; 
-    justify-self: center;
-    border-radius: min(1vh, 1vw);
-    font-size: min(2vh, 2vw);
-    background-color: #404040;
-}
-#TextQuoteDayMobile {
-    background-color: rgb(5, 136, 68);
-    border-radius: min(1vh, 1vw);
-    font-size: min(2em, 3vh);
-    display: grid;
-    justify-content: center;
-}
-#closeButtonQuoteDayMobile {
-    display: grid;
-    justify-self: center;   
-    color: #ffffff;
-    background: linear-gradient(to bottom, rgb(5, 136, 68), #5a5a5a);
-    border: none;
-    font-size: min(2em, 3vh);
-
 }
