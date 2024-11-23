@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    /* зовнішні відступи для всіх блоків */
+    padding: 1vh;
+}
+
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.mainSide {
+    display: grid;
+    padding: 0;
+    align-items: start;
+    grid-template-columns: 20% 1fr;
+}
+
+.title_containers,
+aside {
+    background-color: #404040;
+    border-radius: min(1vh, 1vw);
+    display: grid;
+    place-items: center;
+}
+footer {
+    height: min(5vh, 5vw);
+}
+.title_containers {
+    font-size: min(2em, 3vh);
+    font-style: italic;
+    overflow: hidden;
+}
+
+aside {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+}
+
+#My_resume_link {
+    color: #ffffff;
+
+}
+
+/* кнопки */
+.Inner_navigation {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #5a5a5a;
+    border: 0;
+    border-bottom: 0.5vh solid #404040;
+}
+
+.Inner_navigation {
+    font-size: 2vw;
+}
+
+main {
+    background-color: #404040;
+    box-sizing: border-box;
+    border-radius: min(1vh, 1vw);
+    display: grid;
+    margin-left: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: min(2em, 3vh);
+}
+
+#PhotoInMenu, #PhotoInMainSide {
+    display: none;
+    width: 60%;
+    box-sizing: border-box;
+    border-radius: min(1vh, 1vw);
+    margin-bottom: max(1vh, 1vw);
+    justify-self: center;
+    border-radius: max(2vw, 2vh);
+}
+@media (max-device-width: 1024px) {
+    #PhotoInMainSide {
+        display: block;
+        width: 30%;
+    }
+    #PhotoInMenu {
+        display: none;
+    }
+}
+/* на 1 більше за мінімальну ширину*/
+@media (min-device-width: 1025px) {
+    #PhotoInMainSide {
+        display: none;
+    }
+    #PhotoInMenu {
+        display: block;
+    }
+}
+
+#title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4em;
+
+}
+
+.link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#Linux_photo {
+    width: 20%;
+}
+
+#awards_and_titles_list {
+    padding-left: 4vh;
+}
+
+#noscript {
+    color: #000000;
+    background-color: rgb(170, 54, 54);
+    position: fixed;
+    border-radius: 0 0 20px 20px;
+    top: 0;
+    width: 30%;
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: calc(50% - 30% /2);
+    padding: 10px;
+    text-align: center;
+}
+
+#noscriptText {
+    color: #000000;
+}
+:root {
+    --sizeMenu: 10vw; /*розмір меню*/
+    --margin: 1vw; /*відступи від блоків*/
+}
+#MenuWidget, #MenuWidgetallInfoButton, #MenuWidgetBiographyButton {
+    position: fixed;
+    width: var(--sizeMenu);
+    height: var(--sizeMenu);
+    border-radius: 50%;
+    padding: 0;
+    left: 2vw;
+    
+}
+#MenuWidget {
+    display: none;
+    background-color: rgb(32, 104, 69);
+    top: calc(100% - var(--sizeMenu) - 2vw);
+}
+
+.MenuIcons {
+    width: 65%;
+    height: 65%;
+    display: flex; 
+    justify-self: center;
+    align-items: center;
+}
+
+#iconMenu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-self: center;
+}
+#MenuWidgetallInfoButton{
+    top: calc(100% - var(--sizeMenu) * 2 - 2vw - var(--margin));
+}
+#MenuWidgetBiographyButton {
+    top: calc(100% - var(--sizeMenu) * 3 - 2vw  - var(--margin) * 2);
+}
+#MenuWidgetdevelop_linuxButton, #MenuWidgetnagorodyButton {
+    position: fixed;
+    width: var(--sizeMenu);
+    height: var(--sizeMenu);
+    border-radius: 50%;
+    padding: 0;
+    top: calc(100% - var(--sizeMenu) - 2vw);
+}
+#MenuWidgetdevelop_linuxButton {
+    left: calc(var(--sizeMenu) + 2vw + var(--margin));
+}
+#MenuWidgetnagorodyButton {
+    left: calc(var(--sizeMenu) * 2 + 2vw + var(--margin) * 2);
+}
+#allInfoButton {
+    border-radius: min(1vh, 1vw) min(1vh, 1vw) 0 0 ;
+}
+#nagorodyButton {
+    border-radius: 0 0 min(1vh, 1vw) min(1vh, 1vw);
+    border: none;
+
+}
+
+.buttonMenu {
+    border: none;
+    background-color: #212436;
+}
+@media (max-device-width: 1500px) {
+    .mainSide {
+        grid-template-columns: 30% 1fr;
+    }
+
+    #noscript {
+        width: 50%;
+        margin-left: calc(50% - 50% /2);
+    }
+}
+
+@media (max-device-width: 1024px) {
+    #MenuWidget {
+        display: block;
+    }
+    .buttonMenu {
+        display: none;
+    }
+    .mainSide {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    main {
+        margin: 0;
+        margin-bottom: 1vh;
+        margin-top: 1vh;
+        font-size: min(1em, 2vw);
+    }
+    * {
+        padding: 0.5vh;
+    }
+
+    aside {
+        display: none;
+    }
+    footer {
+        height: min(10vh, 10vw);
+    }
+
+    #quoteDay {
+        display: none;
+    }
+    .title_containers {
+        font-size: min(1em, 2vw);
+    }
+}
+@media (min-device-width: 1025px) {
+    #quoteDayMobile {
+        display: none;
+    }
+}
+@media (max-device-width: 425px) {
+    aside {
+        grid-template-columns: 1fr;
+    }
+}
+/* для меню навігації, щоб кнопки не виділялись на сенсорних екранах */
+@media (pointer: fine) {
+    .Inner_navigation:hover {
+        background-color: #6a6a6a;
+    }
+}
+
+@media (pointer: coarse) {
+    .Inner_navigation:hover {
+        background-color: #5a5a5a;
+    }
+}
+#quoteDay {
+    position: fixed;
+    background-color: rgba(25, 63, 44, 0.7);
+    height: 10%;
+    top: 0;
+    border-radius: 0 0 min(1vh, 1vw) min(1vh, 1vw);
+}
+#closeButtonQuoteDay {
+    display: grid;
+    background: linear-gradient(to bottom, rgb(5, 136, 68), #5a5a5a);
+    outline: none;
+    color: #ffffff;
+    font-size: min(2.5vh, 2.5vw);
+    justify-self: center;
+    align-items: center;
+    width: min(10vh, 10vw);
+    height: min(5vh, 5vw);
+    font-size: min(2vh, 2vw);
+    border: none;
+    padding: 0;
+}
+#TextQuoteDay {
+    font-size: min(2.5vh, 2.5vw);
+    background-color: rgb(5, 136, 68);
+    border-radius: min(1vh, 1vw);
+    display: grid;
+    justify-self: center;
+}
+#quoteDayMobile {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 1vh;
+    margin-top: 0; 
+    justify-self: center;
+    border-radius: min(1vh, 1vw);
+    font-size: min(2vh, 2vw);
+    background-color: #404040;
+}
+#TextQuoteDayMobile {
+    background-color: rgb(5, 136, 68);
+    border-radius: min(1vh, 1vw);
+    font-size: min(2em, 3vh);
+    display: grid;
+    justify-content: center;
+}
+#closeButtonQuoteDayMobile {
+    display: grid;
+    justify-self: center;   
+    color: #ffffff;
+    background: linear-gradient(to bottom, rgb(5, 136, 68), #5a5a5a);
+    border: none;
+    font-size: min(2em, 3vh);
+
+}
