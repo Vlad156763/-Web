@@ -52,7 +52,6 @@ function setHTMLAllInfo() {
     " змінив"+
     " індустрію і продовжує впливати на розвиток технологій."; 
 }
-
 function setHTMLBiography() {
     TittleText.innerHTML = "Біографія";
     mainText.innerHTML = 
