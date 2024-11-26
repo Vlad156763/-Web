@@ -6,7 +6,7 @@ const NameTest = /^([a-zA-Zа-яА-ЯІієЄїЇґҐ' -]){2,40}$/;
 const EmailTest = /^[a-zA-Z0-9._%+-]+\@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
 const NumberTest = /^\+?[0-9 -]{10,40}$/;
 
-$(".button").off("input").on("input", function() {
+$(".button").on("input", function() {
     //перевіряю коментар і якщо він правильний, інформую користувача
     if(NameTest.test($('#Name').val())) { $("#correctOrNot_Name").html('<img class="iconSorNot" src="Images/greenIcon.png" alt="icon">'); NameCorrect = true; } 
     else { $("#correctOrNot_Name").html('<img class="iconSorNot" src="Images/redIcon.png" alt="icon">'); NameCorrect = false; }
