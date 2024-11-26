@@ -6,34 +6,25 @@
 4. Створити функцію «Цитата дня», що виводить випадкову цитату із заздалегідь заданого масиву висловлювань. 
 Винести розроблену функцію в окремий файл та викликати її у підвалі сторінок, розроблених в лабораторній роботі №4.
 */
-let PhotoInMenu = document.getElementById("PhotoInMenu");
-let PhotoInMainSide = document.getElementById("PhotoInMainSide");
 let buttonMenu = document.getElementsByClassName("buttonMenu");
-let MenuWidget = document.getElementById("MenuWidget");
-
 let MenuIsActive = true;
-document.getElementById("MenuWidget").addEventListener('click',  function() {
+
+$("#MenuWidget").click(function() {
     if(MenuIsActive) {
-        MenuWidget.style.backgroundColor = "#212436";
-        for(let i = 0; i < buttonMenu.length; i++) 
-            buttonMenu[i].style.display = "block";
+        $('#MenuWidget').css("background-color", "#212436");
+        $('.buttonMenu').css('display', 'block');
         MenuIsActive = false;
     } else {
-        MenuWidget.style.backgroundColor = "rgb(32, 104, 69)";
-        for(let i = 0; i < buttonMenu.length; i++) 
-            buttonMenu[i].style.display = "none";
+        $('#MenuWidget').css("background-color", "rgb(32, 104, 69)");
+        $('.buttonMenu').css('display', 'none');
         MenuIsActive = true;
     }
 });
 
-
-let mainText = document.getElementById("allInfo");
-let TittleText = document.getElementById("title");
-
 function setHTMLAllInfo() {
-    TittleText.innerHTML = "Загальна інформація";
-    mainText.innerHTML = 
-    "Лінус Торвальдс — це ім'я, яке назавжди змінило світ технологій. Він — той самий програміст, який"+
+    $('#title').html("Загальна інформація");
+    $('#allInfo').html(
+        "Лінус Торвальдс — це ім'я, яке назавжди змінило світ технологій. Він — той самий програміст, який"+
     " створив"+
     " Linux, одну з найважливіших операційних систем у світі. Уявіть собі молодого студента з Фінляндії, який"+
     " просто не міг знайти ідеальну операційну систему для своїх потреб і вирішив створити власну. Те, що"+
@@ -51,11 +42,12 @@ function setHTMLAllInfo() {
     " програмістів у всьому світі. <br>"+
     " Лінус — не тільки геній коду, але й натхненник руху відкритого програмного забезпечення. Його внесок"+
     " змінив"+
-    " індустрію і продовжує впливати на розвиток технологій."; 
+    " індустрію і продовжує впливати на розвиток технологій."
+    );
 }
 function setHTMLBiography() {
-    TittleText.innerHTML = "Біографія";
-    mainText.innerHTML = 
+    $('#title').html("Біографія");
+    $('#allInfo').html(
     "Лінус Бенедикт Торвальдс народився 28 грудня 1969 року в Гельсінкі, Фінляндія. Його батьки, Нільс і Анна"+
     " Торвальдс, були відомими журналістами та політичними активістами. Дід Лінуса по матері, Ларс Торвальдс,"+
     " був"+
@@ -84,11 +76,13 @@ function setHTMLBiography() {
     " працювати. <br>"+
     " Попри свою величезну популярність у світі технологій, Лінус веде досить скромний і приватний спосіб"+
     " життя."+
-    " Він любить проводити час із родиною, грати у відеоігри та читати книги.";
+    " Він любить проводити час із родиною, грати у відеоігри та читати книги."
+);
 }
 function setHTMLAwards() {
-    TittleText.innerHTML = "Нагороди та звання";
-    mainText.innerHTML = 
+    $('#title').html("Нагороди та звання");
+
+    $('#allInfo').html(
     "Лінус Торвальдс отримав численні нагороди та визнання за свої досягнення в галузі інформаційних"+
     "            технологій"+
     "            та програмного забезпечення. Ось деякі з них:"+
@@ -120,11 +114,12 @@ function setHTMLAwards() {
     "                    його внесок у розвиток ядра Linux і підтримку відкритого програмного забезпечення.<br><br>"+
     "                </li>"+
     "            </ol>"+
-    "            Ці нагороди відзначають його великий внесок у розвиток сучасних технологій і програмного забезпечення.";
+    "            Ці нагороди відзначають його великий внесок у розвиток сучасних технологій і програмного забезпечення."
+    );
 }
 function setHTMLDevLinux() {
-    TittleText.innerHTML = "Розробка linux";
-    mainText.innerHTML = 
+    $('#title').html("Розробка linux");
+    $('#allInfo').html(
     "Лінус Торвальдс розпочав розробку Linux у 1991 році під час свого навчання в Гельсінському університеті."+
     " Його метою було створення нової операційної системи, яка була б дешевшою і більш доступною для"+
     " користувачів,"+
@@ -152,19 +147,17 @@ function setHTMLDevLinux() {
     " Протягом років Linux продовжував розвиватися, стаючи основою для численних дистрибутивів і застосунків."+
     " Торвальдс продовжував грати активну роль у розвитку ядра, забезпечуючи його стабільність і розширюючи"+
     " функціональність. Завдяки його зусиллям Linux став однією з найважливіших операційних систем у світі."
+    );
 }
 
-document.getElementById("allInfoButton").addEventListener("click", setHTMLAllInfo);
-document.getElementById("MenuWidgetallInfoButton").addEventListener("click", setHTMLAllInfo);
-
-document.getElementById("BiographyButton").addEventListener("click", setHTMLBiography);
-document.getElementById("MenuWidgetBiographyButton").addEventListener("click", setHTMLBiography);
-
-document.getElementById("nagorodyButton").addEventListener("click", setHTMLAwards);
-document.getElementById("MenuWidgetnagorodyButton").addEventListener("click", setHTMLAwards);
-
-document.getElementById("develop_linuxButton").addEventListener('click', setHTMLDevLinux);
-document.getElementById("MenuWidgetdevelop_linuxButton").addEventListener('click', setHTMLDevLinux);
+$('#allInfoButton').click(setHTMLAllInfo);
+$('#MenuWidgetallInfoButton').click(setHTMLAllInfo);
+$("#BiographyButton").click(setHTMLBiography);
+$("#MenuWidgetBiographyButton").click (setHTMLBiography);
+$("#nagorodyButton").click (setHTMLAwards);
+$("#MenuWidgetnagorodyButton").click (setHTMLAwards);
+$("#develop_linuxButton").click(setHTMLDevLinux);
+$("#MenuWidgetdevelop_linuxButton").click(setHTMLDevLinux);
 
 //цитата дня
 let arrayQuote = [
@@ -185,14 +178,11 @@ let arrayQuote = [
 function getRandomNumber(min, max) { //[min; max)
     return Math.floor(Math.random() * (max - min)) + min;
 }
-let quoteDay = document.getElementById("quoteDay");
-document.getElementById("TextQuoteDay").innerHTML = arrayQuote[getRandomNumber(0,13)];
-document.getElementById("closeButtonQuoteDay").addEventListener("click", function () {
-    quoteDay.style.display = "none";
+$('#TextQuoteDay').html(arrayQuote[getRandomNumber(0,13)]);
+$('#closeButtonQuoteDay').click(function() {
+    $('#quoteDay').css("display", "none");
 });
-
- let quoteDayMobile = document.getElementById("quoteDayMobile");
-document.getElementById("TextQuoteDayMobile").innerHTML = arrayQuote[getRandomNumber(0,13)];
-document.getElementById("closeButtonQuoteDayMobile").addEventListener("click", function () {
-    quoteDayMobile.style.display = "none";
+$('#TextQuoteDayMobile').html(arrayQuote[getRandomNumber(0,13)]);
+$('#closeButtonQuoteDayMobile').click(function() {
+    $("#quoteDayMobile").css("display", "none");
 });
