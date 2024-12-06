@@ -1,0 +1,222 @@
+:root {
+    --backgroundBody: rgb(30, 30, 30);
+    --backgroundBloks: rgb(50, 50, 50);
+    --backgroundTitle: rgb(90, 90, 90);
+    --backgroundInput: rgb(90, 90, 90);
+    --backgroundInputHover: rgb(120, 120, 120);
+    --colorFont: rgb(255, 255, 255);
+    --heightBlocks: 600px;
+    --heightTitle: 70px;
+    --heightBodyBlocks: 500px;
+    --backgroundScrollbarThumb: rgb(90, 90, 90);
+    --sizePhoto: 178px;
+    --sizeIcons: 45px;
+}
+
+body {
+    background-color: var(--backgroundBody);
+}
+
+.blocks {
+    background-color: var(--backgroundBloks);
+    height: var(--heightBlocks);
+}
+
+.title {
+    background-color: var(--backgroundTitle);
+    color: var(--colorFont);
+    text-align: center;
+    align-content: center;
+    font-weight: bold;
+    height: var(--heightTitle);
+
+}
+
+.body,
+.eduBlock {
+    height: var(--heightBodyBlocks);
+}
+
+.body::-webkit-scrollbar,
+.eduBlock::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.body::-webkit-scrollbar-thumb,
+.eduBlock::-webkit-scrollbar-thumb {
+    background-color: var(--backgroundScrollbarThumb);
+    border-radius: 10px;
+}
+
+#my_photo {
+    width: var(--sizePhoto);
+    height: var(--sizePhoto);
+    display: grid;
+    justify-self: center;
+    border-radius: 20px 80px;
+    border-top: 5px solid #156763;
+    border-bottom: 5px solid #763315;
+    padding: 10px;
+    filter: drop-shadow(4px 4px 10px #818181);
+
+}
+
+.icons {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: auto;
+    
+}
+
+.icons>a>img {
+    height: var(--sizeIcons);
+    filter: drop-shadow(2px 2px 5px #74cac6);
+}
+
+#githubIcon {
+    height: calc(var(--sizeIcons) + 10px);
+}
+
+@media(max-width: 512px) {
+    .icons>a>img {
+        height: calc(var(--sizeIcons) - 10px);
+    }
+
+    #githubIcon {
+        height: calc(var(--sizeIcons) - 5px);
+    }
+}
+
+#linkPages {
+    background-color: var(--backgroundTitle);
+    margin: 0px;
+}
+
+#AllInfoBlock,
+#ComBlock {
+    height: auto;
+}
+
+#My_works {
+    height: 460px;
+}
+
+@media(max-width: 992px) {
+
+    .eduBlock,
+    .eduBlockParent,
+    #My_works {
+        height: auto;
+    }
+}
+
+#ComForm>input,
+#ComForm>textarea {
+    background-color: var(--backgroundInput);
+    outline: none;
+    border: 0px;
+}
+
+#ComForm>input:not(#submit),
+#ComForm>textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 36px;
+}
+
+#ComForm>textarea {
+    resize: none;
+    height: 100px;
+}
+
+#submit {
+    height: 40px;
+    width: 40%;
+}
+
+@media (pointer: coarse) {
+    #submit:hover {
+        background-color: var(--backgroundInput);
+    }
+}
+
+@media (pointer: fine) {
+    #submit:hover {
+        background-color: var(--backgroundInputHover);
+    }
+}
+
+.iconSorNot {
+    height: 20px;
+}
+
+.has-error {
+    border-bottom: 5px solid red !important;
+}
+
+.has-success {
+    border-bottom: 5px solid rgb(38, 221, 38) !important;
+}
+
+#widgetSuccess {
+    position: absolute;
+    background: linear-gradient(to top, rgb(16, 170, 85), var(--backgroundTitle));
+
+    width: calc(100% - 9px * 2 - 10px *2);
+    margin-top: calc(var(--heightTitle)) !important;
+    margin: auto 10px 0px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    border-radius: 0px 0px 10px 10px;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+}
+
+#textWidgetSuccess {
+    text-align: center;
+    margin-top: 8px;
+}
+
+#ComBlock {
+    position: relative;
+}
+
+#widgetError {
+    display: none;
+    grid-template-rows: 2fr 1fr 1fr 2fr;
+    position: absolute;
+    width: calc(100% - 9px*2);
+    font-size: 20px;
+    font-weight: bold;
+    height: calc(100% - 9px*2);
+
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+
+}
+
+#textWidgetError {
+    background-color: #f44336;
+    grid-row: 2;
+    padding: 20px;
+    margin: 0px;
+    border-radius: 8px 8px 0px 0px;
+    justify-self: bottom;
+    background: linear-gradient(to bottom, rgb(255, 0, 0), #555050);
+}
+
+#buttonWidgetError {
+    background: #555050;
+    color: rgb(0, 0, 0);
+    grid-row: 3;
+    border: none;
+    border-radius: 0px 0px 8px 8px;
+}
